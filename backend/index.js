@@ -4,11 +4,15 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 
+const cors = require('cors');
+
 
 
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use(cors());
 
 const PORT = 8090;
 
@@ -55,13 +59,13 @@ app.post("/running-transaction", (req, res) => {
 
     let debit = req.body.debit;
 
-    let runningBalance = req.body.runningBalance;
+    let running_balance = req.body.running_balance;
 
     // console.log(req.body);
 
     // if(runningBalance <= debit)
 
-    var sql = `INSERT INTO transaction (date,description,credit,debit,runningBalance) VALUES ('${date}','${description}', '${credit}','${debit}','${runningBalance}')`;
+    var sql = `INSERT INTO transaction (date,description,credit,debit,running_balance) VALUES ('${date}','${description}', '${credit}','${debit}','${running_balance}')`;
 
 
 
