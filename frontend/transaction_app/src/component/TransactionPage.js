@@ -14,6 +14,9 @@ import HighlightOffSharpIcon from '@mui/icons-material/HighlightOffSharp';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import {makeStyles} from '@material-ui/core/styles';
+// import CloseSharpIcon from '@mui/icons-material/CloseSharp';
+
+
 
 const useStyles = makeStyles({
   addCardProp: {
@@ -31,8 +34,6 @@ const useStyles = makeStyles({
     display: "flex",
     paddingBottom: "5%",
   }
- 
- 
  });
 
 
@@ -49,6 +50,8 @@ const TransactionPage = () => {
       <CardContent>
         <Typography sx={{ fontSize: 22, paddingBottom: 5, }} color="text.secondary" gutterBottom>
           New Transaction
+          {/* <Button variant="contained" startIcon={<CloseSharpIcon sx={{ fontSize: 22, paddingLeft: 2, }} />}  sx={{ backgroundColor: 'white', color: 'black', borderRadius: '30px', marginLeft: '60%', alignContent: 'center' }}>
+          </Button> */}
         </Typography>
         <Box className={classes.addBox}>
         <Typography sx={{ fontSize: 18, paddingRight: 5, }} variant="h5" component="div" color="text.secondary">
@@ -70,17 +73,13 @@ const TransactionPage = () => {
           </FormControl>
         </Box>
         </Box>
-        <Box sx={{ width: '60ch'}} className={classes.addBox}>
-          {/* <FormControl fullWidth> */}
+        <Box sx={{ width: '60ch'}} className={classes.addBox}> 
             <InputLabel id="demo-simple-select-label" sx={{ width: '20ch'}}>Amount</InputLabel>
             <TextField type={"number"} id="standard-basic" label="" placeholder='0' variant="standard" />
-          {/* </FormControl> */}
         </Box>
         <Box sx={{ width: '60ch'}} className={classes.addBox}>
-          {/* <FormControl fullWidth variant="body2"> */}
             <InputLabel id="demo-simple-select-label" sx={{ width: '20ch'}}>Description</InputLabel>
             <TextField type={"text"} id="standard-basic" label="" variant="standard" />
-          {/* </FormControl> */}
         </Box>
       </CardContent>
       <CardActions >
