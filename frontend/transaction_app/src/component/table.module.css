@@ -1,0 +1,23 @@
+.addTableContainer{
+    max-width: 70%;
+    border: 1px solid rgb(12, 1, 1);
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #ffe6e6;
+    border-radius: 10px;
+  }
+.addButton{
+    font-size: 15px;
+    padding: 10px;
+    background-color: #ffe6e6;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  .Button {
+    text-decoration: none;
+    color: rgb(83, 111, 240);
+  }
+  .TableContainer {
+    border: none;
+  }

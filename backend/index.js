@@ -31,8 +31,6 @@ app.post("/running-transaction", (req, res) => {
     let description = req.body.description;
     let type = req.body.type;
     let amount = req.body.amount;
-    // let running_balance = 0;
-    // if (running_balancec == 0)
     connect.query("select *from transaction ORDER BY id DESC LIMIT 1", (err, result) => {
 
         if (err) {
@@ -41,7 +39,6 @@ app.post("/running-transaction", (req, res) => {
                 message: err,
             });
         } else {
-            // console.log(result[0].running_balance);
             var balance = 0;
             if (result.length) {
                 balance = result[0].running_balance;

@@ -38,7 +38,7 @@ function TransactionPage() {
     axios
       .post('http://localhost:8090/running-transaction', transactions)
       .then((response) => {
-        history.push("/");
+        history.goBack("/");
       },
       (error) =>{
           console.log(error);

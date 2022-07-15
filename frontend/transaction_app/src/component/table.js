@@ -7,29 +7,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
 import axios from "axios";
 import { useState, useEffect } from "react";
+import "./App.css"
+import TableCss from './table.module.css';
 
 
-const useStyles = makeStyles({
-  addTableContainer: {
-    maxWidth: "70%",
-    border: "1px solid black",
-    marginLeft: "15%",
-    marginTop: "5%"
-  },
-  addButton: {
-    fontSize: "15px",
-    padding: "10px",
-  },
-
-});
 
 const Tables = () => {
-  const classes = useStyles();
   const [transactions, setTransactions] = useState([]);
-
   useEffect(() => {
     async function getAllTransaction() {
       try {
@@ -44,17 +30,18 @@ const Tables = () => {
   }, [])
 
   return (
-    <TableContainer component={Paper} className={classes.addTableContainer}>
-      <Table sx={{ minWidth: 650, fontSize: 22 }} aria-label="simple table">
+
+    <TableContainer component={Paper} className={TableCss.TableContainer}>
+      <Table sx={{ minWidth: 650, fontSize: 22 }} aria-label="simple table" className={TableCss.addTableContainer}>
         <TableHead>
           <TableRow>
             <TableCell>Office Transactions</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
-            <TableCell><button className={classes.addButton}>
-            <Link to="/TransactionPage">+ Transaction Page</Link>
-              </button></TableCell>
+            <TableCell><button className={TableCss.addButton}>
+              <Link to="/TransactionPage" className={TableCss.Button}>+ Transaction Page</Link>
+            </button></TableCell>
           </TableRow>
         </TableHead>
         <TableHead>
@@ -83,6 +70,7 @@ const Tables = () => {
         </TableBody>
       </Table>
     </TableContainer>
+    
   );
 }
 export default Tables;
