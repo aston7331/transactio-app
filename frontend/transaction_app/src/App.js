@@ -4,15 +4,12 @@ import TransactionPage from "./component/TransactionPage";
 
 function App() {
   return (
-    <>
     <Router>
       <Switch>
         <Route exact path="/" component={Tables} />
         <Route path="/TransactionPage" component={TransactionPage} />
       </Switch>
     </Router>
-     
-    </>
   );
 }
 

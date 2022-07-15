@@ -12,11 +12,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 
-
-
 const useStyles = makeStyles({
   addTableContainer: {
-    backgroundColor: "blue",
     maxWidth: "70%",
     border: "1px solid black",
     marginLeft: "15%",
@@ -55,15 +52,18 @@ const Tables = () => {
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
-            <TableCell><button className={classes.addButton}><Link style={{textDecoration: 'none', color: 'black'}} to="/TransactionPage">+ Transaction Page</Link></button></TableCell>
+            <TableCell><button className={classes.addButton}>
+            <Link to="/TransactionPage">+ Transaction Page</Link>
+              {/* <Link style={{textDecoration: 'none', color: 'black'}} to="/TransactionPage">+ Transaction Page</Link> */}
+              </button></TableCell>
           </TableRow>
         </TableHead>
         <TableHead>
           <TableRow>
             <TableCell align="center">Date</TableCell>
             <TableCell align="center">Description</TableCell>
-            <TableCell align="center">Credit</TableCell>
-            <TableCell align="center">Debit</TableCell>
+            <TableCell align="center">Amount</TableCell>
+            <TableCell align="center">Type</TableCell>
             <TableCell align="center">Running Balance</TableCell>
           </TableRow>
         </TableHead>
@@ -74,8 +74,8 @@ const Tables = () => {
                 <TableRow key={i}>
                   <TableCell component="th" scope="row" align="center">{transaction.date}</TableCell>
                   <TableCell align="center">{transaction.description}</TableCell>
-                  <TableCell align="center">{transaction.credit}</TableCell>
-                  <TableCell align="center">{transaction.debit}</TableCell>
+                  <TableCell align="center">{transaction.amount}</TableCell>
+                  <TableCell align="center">{transaction.type}</TableCell>
                   <TableCell align="center">{transaction.running_balance}</TableCell>
                 </TableRow>
               )
@@ -87,4 +87,3 @@ const Tables = () => {
   );
 }
 export default Tables;
-
