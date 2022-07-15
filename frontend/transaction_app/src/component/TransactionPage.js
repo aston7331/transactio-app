@@ -30,7 +30,6 @@ function TransactionPage() {
   const handleSubmit = (e) => {
     console.log(e);
     e.preventDefault();
-    history.push("/");
     let transactions = {
       "type": transactionType,
       "amount": amount,
@@ -39,6 +38,12 @@ function TransactionPage() {
     axios
       .post('http://localhost:8090/running-transaction', transactions)
       .then((response) => {
+        history.push("/");
+      },
+      (error) =>{
+          console.log(error);
+          alert(`         Insuficient Balance 
+          Please enter correct amount`)
       });
 
     console.log(transactions);

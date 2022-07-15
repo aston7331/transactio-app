@@ -52,7 +52,11 @@ app.post("/running-transaction", (req, res) => {
                 if (parseInt(balance) >= parseInt(amount)) {
                     balance = parseInt(balance) - parseInt(amount);
                 }else{
-
+                    res.status(400).json({
+                        status: 400,
+                        message: "Insuficient Balance",
+                    });
+                    return;
                 }
             }
             var sql = `INSERT INTO transaction (date,description,amount,type,running_balance) VALUES ( '${date}','${description}', ${amount},'${type}','${balance}')`;

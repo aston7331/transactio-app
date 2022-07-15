@@ -54,7 +54,6 @@ const Tables = () => {
             <TableCell></TableCell>
             <TableCell><button className={classes.addButton}>
             <Link to="/TransactionPage">+ Transaction Page</Link>
-              {/* <Link style={{textDecoration: 'none', color: 'black'}} to="/TransactionPage">+ Transaction Page</Link> */}
               </button></TableCell>
           </TableRow>
         </TableHead>
